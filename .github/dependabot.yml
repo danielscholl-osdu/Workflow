@@ -3,7 +3,7 @@ updates:
 
   # 1) TOP-LEVEL AGGREGATOR
   #    Scans the root POM, but ignores any dependencies physically declared in
-  #    testing/**, <service>-acceptance-test/**, etc.
+  #    testing/**, workflow-acceptance-test/**, etc.
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
@@ -19,8 +19,8 @@ updates:
       - dependency-name: "*"
         paths:
           - "testing/**"
-          - "<service>-acceptance-test/**"
-          - "<service>-core-plus/**"
+          - "workflow-acceptance-test/**"
+          - "workflow-core-plus/**"
     groups:
       spring:
         patterns:
@@ -72,9 +72,9 @@ updates:
           - "minor"
           - "patch"
 
-  # 2) <service> CORE
+  # 2) workflow CORE
   - package-ecosystem: "maven"
-    directory: "/<service>-core"
+    directory: "/workflow-core"
     schedule:
       interval: "weekly"
       day: "sunday"
@@ -95,7 +95,7 @@ updates:
 
   # 3) SPI AZURE
   - package-ecosystem: "maven"
-    directory: "/provider/<service>-azure"
+    directory: "/provider/workflow-azure"
     schedule:
       interval: "weekly"
       day: "sunday"
@@ -112,9 +112,9 @@ updates:
           - "minor"
           - "patch"
 
-  # 4) SPI AWS (corrected directory to /provider/<service>-aws)
+  # 4) SPI AWS (corrected directory to /provider/workflow-aws)
   - package-ecosystem: "maven"
-    directory: "/provider/<service>-aws"
+    directory: "/provider/workflow-aws"
     schedule:
       interval: "never"
     ignore:
@@ -122,7 +122,7 @@ updates:
 
   # 5) SPI GC
   - package-ecosystem: "maven"
-    directory: "/provider/<service>-gc"
+    directory: "/provider/workflow-gc"
     schedule:
       interval: "never"
     ignore:
@@ -130,23 +130,23 @@ updates:
 
   # 6) SPI IBM
   - package-ecosystem: "maven"
-    directory: "/provider/<service>-ibm"
+    directory: "/provider/workflow-ibm"
     schedule:
       interval: "never"
     ignore:
       - dependency-name: "*"
 
-  # 7) <service> CORE PLUS
+  # 7) workflow CORE PLUS
   - package-ecosystem: "maven"
-    directory: "/<service>-core-plus"
+    directory: "/workflow-core-plus"
     schedule:
       interval: "never"
     ignore:
       - dependency-name: "*"
 
-  # 8) <service> ACCEPTANCE TEST
+  # 8) workflow ACCEPTANCE TEST
   - package-ecosystem: "maven"
-    directory: "/<service>-acceptance-test"
+    directory: "/workflow-acceptance-test"
     schedule:
       interval: "never"
     ignore:
@@ -160,43 +160,43 @@ updates:
     ignore:
       - dependency-name: "*"
   - package-ecosystem: "maven"
-    directory: "/testing/<service>-test-core-plus"
+    directory: "/testing/workflow-test-core-plus"
     schedule:
       interval: "never"
     ignore:
       - dependency-name: "*"
   - package-ecosystem: "maven"
-    directory: "/testing/<service>-test-baremetal"
+    directory: "/testing/workflow-test-baremetal"
     schedule:
       interval: "never"
     ignore:
       - dependency-name: "*"
   - package-ecosystem: "maven"
-    directory: "/testing/<service>-test-azure"
+    directory: "/testing/workflow-test-azure"
     schedule:
       interval: "never"
     ignore:
       - dependency-name: "*"
   - package-ecosystem: "maven"
-    directory: "/testing/<service>-test-core"
+    directory: "/testing/workflow-test-core"
     schedule:
       interval: "never"
     ignore:
       - dependency-name: "*"
   - package-ecosystem: "maven"
-    directory: "/testing/<service>-test-ibm"
+    directory: "/testing/workflow-test-ibm"
     schedule:
       interval: "never"
     ignore:
       - dependency-name: "*"
   - package-ecosystem: "maven"
-    directory: "/testing/<service>-test-aws"
+    directory: "/testing/workflow-test-aws"
     schedule:
       interval: "never"
     ignore:
       - dependency-name: "*"
   - package-ecosystem: "maven"
-    directory: "/testing/<service>-test-gc"
+    directory: "/testing/workflow-test-gc"
     schedule:
       interval: "never"
     ignore:
